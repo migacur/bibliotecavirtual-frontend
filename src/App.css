@@ -207,6 +207,7 @@
 }
 
 .contenido{
+  background-color: #fff;
   display: grid;
   grid-template-columns: 255px 1fr;
   grid-template-rows: 45px 1fr 50px;
@@ -374,7 +375,7 @@
 
 /*Núcleos*/
 .book-container{
-  
+  background-color: #fff;
   margin-top: 1rem;
   padding: 2rem;
   height: 100%;
@@ -1102,8 +1103,7 @@
 
   .form-container{
     padding: 1rem;
-    margin-top: 1rem;
-    padding-bottom: 2.6rem;
+    margin-top: 3rem;
     display: grid;
    grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
    grid-gap: .6rem;
@@ -1113,7 +1113,7 @@
   }
  
   .formulario{
-    width: 450px;
+    width: 500px;
   }
 
    
@@ -1146,6 +1146,7 @@
 @media(max-width:550px){
 
   .formulario{
+    width: 320px;
     margin: auto;
     margin-right: auto;
   }
@@ -1153,6 +1154,7 @@
   .myUser{
     width: 200px;
   }
+
 
 }
 
