@@ -948,7 +948,7 @@
   color: #fff;
   padding: 2rem 1rem;
   font-size: .9rem;
-  width: 300px;
+  width: 360px;
 }
 
 .myUser span{
@@ -1127,7 +1127,6 @@
   }
 
   .contenido{
-    min-height: 100vh;
     display: grid;
     position: relative;
     grid-template-columns: 255px 1fr;
@@ -1148,7 +1147,7 @@
   }
 
   .myUser{
-    width: 200px;
+    width: 90%;
   }
 
 
@@ -1165,6 +1164,9 @@
     height: 3.2px;
   }
 
+  .myUser{
+    width: 100%;
+  }
 }
 
 .btn-block{
@@ -1253,7 +1255,9 @@
   border-radius: .3rem;
   font-weight: bold;
   cursor: pointer;
-  width: 100%;
+  width: 200px;
+  margin-left: auto;
+  margin-right: auto;
   display: block;
   margin-top: 1.5rem;
 }
@@ -1587,6 +1591,10 @@
 }
 
 /* Charge */
+.spinner_box{
+  min-height: 100vh;
+}
+
 .custom-loader {
   margin-top: 3rem;
   margin-left: auto;
