@@ -44,8 +44,8 @@
 .header h1{
   font-size: 4.2rem;
   font-family: 'Bebas', sans-serif;
-  text-shadow: 2px 1px 5px #404040;
-  color: var(--azul-oscuro);
+  text-shadow: 1px 1px 2px #404040;
+  color: var(--azul-medio);
   margin-left: .5rem;
   letter-spacing: .4px;
   user-select: none;
@@ -78,13 +78,13 @@
 @keyframes cambiarBG{
 
     0%{
-      color: var(--azul-oscuro);
+      color: var(--azul-medio);
     }
     25%{
-      color: var(--azul-oscuro);
+      color: var(--azul-medio);
     }
     50%{
-      color: var(--azul-oscuro);
+      color: var(--azul-medio);
     }
     75%{
       color: var(--amarillo);
@@ -106,10 +106,10 @@
     color: var(--amarillo);
   }
   75%{
-    color: var(--azul-oscuro);
+    color: var(--azul-medio);
   }
   100%{
-    color: var(--azul-oscuro);
+    color: var(--azul-medio);
   }
 }
 
