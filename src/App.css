@@ -318,8 +318,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  position: relative;
-  z-index: 1;
+  position: absolute;
+  width: 100%;
 }
 
 .footer-contact{
@@ -1121,26 +1121,22 @@
     margin-left: .8rem;
   }
   
-  .footer{
-    position: relative;
-    bottom: 0;
-   width:100%;
-  }
-
+ 
   .aviso-descarga{
     padding: 5rem 0;
   }
 
   .contenido{
-
+    min-height: 100vh;
     display: grid;
+    position: relative;
     grid-template-columns: 255px 1fr;
   grid-template-rows: 45px 1fr 60px;
   grid-template-areas: "barra barra"
                         "books books"
                         "pages pages";
   }
-  
+
 }
 
 @media(max-width:550px){
