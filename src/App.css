@@ -204,13 +204,14 @@
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+  padding: 1rem 0;
 }
 
 .contenido{
   background-color: #fff;
   display: grid;
   grid-template-columns: 255px 1fr;
-  grid-template-rows: 45px 1fr 50px;
+  grid-template-rows: 45px 1fr 80px;
   grid-template-areas: "barra barra"
                         "menu books"
                         "menu books"
@@ -1130,7 +1131,7 @@
     display: grid;
     position: relative;
     grid-template-columns: 255px 1fr;
-  grid-template-rows: 45px 1fr 60px;
+  grid-template-rows: 45px 1fr 110px;
   grid-template-areas: "barra barra"
                         "books books"
                         "pages pages";
@@ -1362,10 +1363,11 @@
     margin-right: 1rem;
     margin-bottom: 1rem;
     font-weight: bold;
-    font-family: inherit;
     letter-spacing: .4px;
     display: flex;
     justify-content: center;
+    align-items: center;
+    font-family: "Oxygen";
     margin-top: 1rem;
     transition: all 500ms;
 }
