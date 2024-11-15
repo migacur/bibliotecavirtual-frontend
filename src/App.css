@@ -598,6 +598,10 @@
     display: block;
   }
 
+  .info{
+      margin-top: 0;
+    margin-bottom: -5rem;
+  }
 
   .book-container{
     margin-top: .6rem;
@@ -672,8 +676,8 @@
   }
 
   .slider-box{
-    width: 96%;
-    height: 220px;
+    width: 100%;
+    height: 225px;
 
   }
 
