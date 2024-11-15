@@ -44,7 +44,7 @@
 .header h1{
   font-size: 4.2rem;
   font-family: 'Bebas', sans-serif;
-  text-shadow: 1px 1px 2px #404040;
+  text-shadow: 1px 2px 3px #404040;
   color: var(--azul-medio);
   margin-left: .5rem;
   letter-spacing: .4px;
@@ -78,13 +78,13 @@
 @keyframes cambiarBG{
 
     0%{
-      color: var(--azul-medio);
+      color: #fff;
     }
     25%{
-      color: var(--azul-medio);
+      color: #fff;
     }
     50%{
-      color: var(--azul-medio);
+      color: #fff;
     }
     75%{
       color: var(--amarillo);
@@ -106,10 +106,10 @@
     color: var(--amarillo);
   }
   75%{
-    color: var(--azul-medio);
+    color: #fff;
   }
   100%{
-    color: var(--azul-medio);
+    color: #fff;
   }
 }
 
@@ -779,6 +779,7 @@
 }
 
 .form-title{
+  font-family: "Askhar";
   color: #fff;
   text-transform: uppercase;
   font-weight: bold;
@@ -797,6 +798,10 @@
   outline: none;
   border: none;
   caret-color: #053F5E;
+}
+
+.formulario .input:focus{
+  background: #ebeaea;
 }
 
 .formulario .btn-send{
@@ -1116,7 +1121,10 @@
     width: 500px;
   }
 
-   
+  .formulario .input{
+    padding: .65rem;
+  }
+
   .hamburger .line{
     margin-left: .8rem;
   }

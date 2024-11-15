@@ -15,8 +15,6 @@ import Favoritos from "./componentes/Profile/Favoritos";
 import Agregar from "./componentes/Forms/Agregar";
 import Editar from "./componentes/Forms/Editar";
 import LibrosBuscados from "./componentes/Books/LibrosBuscados";
-import FormPassword from "./componentes/Forms/FormPassword";
-import RecoverPass from "./componentes/Forms/RecoverPass";
 import ConfirmarPass from "./componentes/Forms/confirmarPass";
 import NotFound from "./componentes/Others/NotFound";
 import Header from "./componentes/Header/Header";
@@ -44,8 +42,6 @@ function App() {
                   <Route path="/administrador" element={<Agregar />} />
                   <Route path="/editar-libro" element={<Editar />} />
                   <Route path="/busqueda" element={<LibrosBuscados />} />
-                  <Route path="/form-password" element={<FormPassword />} />
-                  <Route path="/recover-pass" element={<RecoverPass />} />
                   <Route
                     path="/confirmar-password"
                     element={<ConfirmarPass />}

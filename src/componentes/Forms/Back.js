@@ -5,7 +5,7 @@ const Back = () => {
   return (
     <div className="ingreso">
       <NavLink to="/ingresar" className="option-form">
-        <small>Iniciar Sesión</small>
+        <small>Ya tengo cuenta</small>
       </NavLink>
       <NavLink to="/" className="option-form">
         <small>Volver a inicio</small>

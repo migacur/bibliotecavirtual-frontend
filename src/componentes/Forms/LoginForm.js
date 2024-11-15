@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Spinner from "../Others/Spinner";
 
 const LoginForm = ({ loginUser, leerInput, isLogin }) => {
@@ -46,9 +45,6 @@ const LoginForm = ({ loginUser, leerInput, isLogin }) => {
           <a href="/registro" className="option-form">
             <small>¿No tienes cuenta?</small>
           </a>
-          <Link to="/form-password" className="option-form">
-            <small>Olvidé mi cuenta</small>
-          </Link>
         </div>
       </form>
     </div>
