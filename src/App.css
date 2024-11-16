@@ -127,6 +127,72 @@
   z-index: 50;
 }
 
+/* Enlaces */
+
+
+.bar-login{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mi-cuenta{
+  display: flex;
+  align-items: baseline;
+}
+
+.enlace-be{
+  margin: 0 .4rem;
+  font-size: .85rem;
+  font-weight: bold;
+}
+
+.enlace-be-sesion, .enlace-be-account{
+  background-color: #ae2900;
+  padding: .2rem .5rem;
+  border-radius: .2rem;
+  display: flex;
+  align-items: center;
+  transition: all 500ms;
+  letter-spacing: .5px;
+  font-family: "Oxygen";
+}
+
+.enlace-be-sesion:hover{
+  background-color: #922301;
+}
+
+.enlace-be-account{
+  background: var(--azul-oscuro);
+  color: #fff;
+  font-weight: bold;
+  letter-spacing: .4px;
+}
+
+.enlace-be .account-svg{
+  fill: #053F5E;
+  width: 2.3em;
+  height: 2em;
+}
+
+.svg-icon {
+  width: 2.3em;
+  height: 2em;
+  margin-right: .2rem;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: #fff;
+}
+
+.svg-icon circle {
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+
 
 .menu .lista{
   display: flex;
@@ -555,8 +621,6 @@
 }
 
 
-
-
 /*Media queries*/
 
 @media(max-width:900px){
@@ -695,69 +759,6 @@
 
 
 
-/* Enlaces */
-
-
-.bar-login{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.mi-cuenta{
-  display: flex;
-  align-items: baseline;
-}
-
-.enlace-be{
-  margin: 0 .4rem;
-  font-size: .85rem;
-  font-weight: bold;
-}
-
-.enlace-be-sesion, .enlace-be-account{
-  background-color: #ae2900;
-  padding: .2rem .5rem;
-  border-radius: .2rem;
-  display: flex;
-  align-items: center;
-  transition: all 500ms;
-  letter-spacing: .5px;
-}
-
-.enlace-be-sesion:hover{
-  background-color: #7d1e01;
-}
-
-.enlace-be-account{
-  background: var(--azul-oscuro);
-  color: #fff;
-  font-weight: bold;
-  letter-spacing: .4px;
-}
-
-.enlace-be .account-svg{
-  fill: #053F5E;
-  width: 2.3em;
-  height: 2em;
-}
-
-.svg-icon {
-  width: 2.3em;
-  height: 2em;
-  margin-right: .2rem;
-}
-
-.svg-icon path,
-.svg-icon polygon,
-.svg-icon rect {
-  fill: #fff;
-}
-
-.svg-icon circle {
-  stroke: #fff;
-  stroke-width: 2;
-}
 
 /*Formulario registro */
 .form-container{
@@ -1224,7 +1225,7 @@
 
 .myaccount-enlace{
   margin-left: .3rem;
-
+font-family: "Oxygen";
 }
 
 .errores-ev{
@@ -1553,6 +1554,7 @@
   }
 
   .enlace-be-login{
+    font-family: "Oxygen";
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,6 +1,5 @@
 import React from 'react'
 import Back from './Back'
-import Spinner from '../Others/Spinner';
 
 const Formulario = ({registarUser, leerInput,isRegister }) => {
 
@@ -16,27 +15,30 @@ const Formulario = ({registarUser, leerInput,isRegister }) => {
     <input 
     type="text" 
     placeholder="Ingresa tu usuario" 
+    autoComplete="usuario"
     className="input" 
     name="usuario"
     onChange={leerInput}></input>
     <input type="email" 
     placeholder="Ingresa tu email" 
+    autoComplete="email"
     className="input" 
     name="email"
     onChange={leerInput}></input>
     <input type="password" 
     placeholder="Ingresa tu password" 
+    autoComplete="password"
     className="input" 
     name="password"
     onChange={leerInput}></input>
     <input type="password" 
     placeholder="Repite la password" 
+    autoComplete="password"
     className="input" 
     name="repeat"
     onChange={leerInput}></input>
     { isRegister &&
      <div className="login_active_contaienr">
-     <Spinner />
      <p className="login_active">Registrando su cuenta...</p>
    </div>
 

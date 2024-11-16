@@ -1,5 +1,4 @@
 import React from "react";
-import Spinner from "../Others/Spinner";
 
 const LoginForm = ({ loginUser, leerInput, isLogin }) => {
   return (
@@ -31,7 +30,6 @@ const LoginForm = ({ loginUser, leerInput, isLogin }) => {
         ></input>
         {isLogin && (
           <div className="login_active_contaienr">
-            <Spinner />
             <p className="login_active">Ingresando a tu cuenta...</p>
           </div>
         )}
