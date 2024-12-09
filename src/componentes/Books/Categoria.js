@@ -19,7 +19,7 @@ const Categorias = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const { nombre } = useParams();
-  
+
   const consultarAPI = async (page) => {
     try {
       const response = await clienteAxios.get(
@@ -34,17 +34,18 @@ const Categorias = () => {
     } catch (e) {
       Swal.fire({
         title: "¡Error!",
-        text: "Debes Ingresar/Registrarte para tener acceso a los libros.",
+        text: e.response.data.msg,
         icon: "error",
       });
-
-      return navigate("/");
     }
   };
 
   useEffect(() => {
+    if (!user) {
+      return navigate("/ingresar");
+    }
     consultarAPI(1);
-  }, [navigate]);
+  }, [user, navigate]);
 
   const handlePageChange = (page) => {
     consultarAPI(page);
