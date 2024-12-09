@@ -17,7 +17,7 @@ const Ingresar = () => {
       setTimeout(() => {
         return navigate("/");
       }, 2000);
-  }, [user]);
+  }, [user,navigate]);
 
   const [login, setLogin] = useState({
     usuario: "",
@@ -37,7 +37,9 @@ const Ingresar = () => {
     e.preventDefault();
     setIsLogin(true);
     try {
-      const res = await clienteAxios.post("/loginaccount", login);
+      const res = await clienteAxios.post("/loginaccount", login, {
+        withCredentials:true
+      });
       if (res.status === 200) {
         Swal.fire(
           `¡Hola ${login.usuario}!`,
@@ -45,7 +47,6 @@ const Ingresar = () => {
           "success"
         );
      
-        localStorage.setItem("token", res.data.token);
         localStorage.setItem("user", JSON.stringify(res.data.userInfo));
 
         autenticarUser();

@@ -5,7 +5,6 @@ import { useNavigate } from 'react-router-dom'
 
 const ConfirmarPass = () => {
 
-    const token = localStorage.getItem('token')
     const [email, setEmail] = useState('')
     const [code, setCode] = useState('')
     const [isReady, setIsReady] = useState(false)
@@ -19,7 +18,7 @@ const ConfirmarPass = () => {
         setIsReady(true)
         try {
             const res = await clienteAxios.put('codigo-confirmacion', {email, code}, {
-                headers: { Authorization: `Bearer ${token}` }
+               withCredentials:true
             })
             if(res.status === 200){
                 Swal.fire(

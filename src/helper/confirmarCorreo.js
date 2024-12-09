@@ -3,10 +3,9 @@ import clienteAxios from "../config/axios";
 
 const confirmarCorreo = async(userId, navigate, estado)=> {
     estado(true)
-    const token = localStorage.getItem('token')
 
     await clienteAxios.put(`/confirmar-correo/${userId}`, {
-        headers: { Authorization: `Bearer ${token}` }
+        withCredentials:true
     })
     .then(res => {
         if(res.status === 200){

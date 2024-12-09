@@ -1,10 +1,9 @@
 import clienteAxios from "../config/axios";
 
 const editarLibro = async (id, saveBook, redirect) => {
-  const accesToken = localStorage.getItem('token')
 
     await clienteAxios.get(`/mostrar-libro/${id}`, {
-      headers: { Authorization: `Bearer ${accesToken}` }
+      withCredentials:true
     })
     .then(res => {
         saveBook(res.data[0]);

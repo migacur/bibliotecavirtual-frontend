@@ -8,7 +8,6 @@ const Agregar = () => {
 
   const navigate = useNavigate()
   const user = JSON.parse(localStorage.getItem("user"));
-  const accesToken = localStorage.getItem('token')
   const [libro, guardarLibro] = useState({
     titulo: '',
     imagen: '',
@@ -45,7 +44,7 @@ const agregarLibro = async e => {
     // almacenarlo en la BD
     try {
         const res = await clienteAxios.post('/add-libro', formData, {
-          headers: { Authorization: `Bearer ${accesToken}` }
+          withCredentials:true
       });
 
         if(res.status === 200) {

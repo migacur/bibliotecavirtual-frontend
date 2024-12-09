@@ -4,10 +4,9 @@ import clienteAxios from "../config/axios";
 const deleteFavorite = (userId, bookId, reload, setReload) => {
 
   const user = JSON.parse(localStorage.getItem("user"));
-  const token = localStorage.getItem('token')
 
      clienteAxios.put(`/borrar-favorito/${userId}`, {_id: bookId}, {
-      headers: { Authorization: `Bearer ${token}` }
+      withCredentials:true
       })
       .then(res => {
         user.favoritos.splice(bookId, 1)

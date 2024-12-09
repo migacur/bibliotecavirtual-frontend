@@ -3,8 +3,7 @@ import clienteAxios from "../config/axios";
 
 const borrarLibro = (bookID) => {
 
-    const token = localStorage.getItem('token')
-
+  
     Swal.fire({
       title: '¿Desea borrar el libro seleccionado?',
      showCancelButton: true,
@@ -17,7 +16,7 @@ const borrarLibro = (bookID) => {
       
       if (result.isConfirmed) {
         clienteAxios.delete(`/delete-libro/${bookID}`, {
-          headers: { Authorization: `Bearer ${token}` }
+         withCredentials:true
         })
         .then(res => {
             console.log(res.data)

@@ -4,10 +4,9 @@ import clienteAxios from "../config/axios";
 const addFavorite = (userId, bookId, navigate, path) => {
 
   const user = JSON.parse(localStorage.getItem("user"));
-  const token = localStorage.getItem('token')
-
+ 
     clienteAxios.post(`/usuario-favoritos/${userId}`, {_id: bookId}, {
-      headers: { Authorization: `Bearer ${token}` }
+     withCredentials:true
     })
     .then(res => {
       if(res.status === 200){

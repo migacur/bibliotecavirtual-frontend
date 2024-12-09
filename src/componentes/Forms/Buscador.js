@@ -8,7 +8,6 @@ import Spinner from "../Others/Spinner";
 
 const Buscador = () => {
   const { busquedaLibros } = useContext(ContextoBusqueda);
-  const token = localStorage.getItem("token");
   const navigate = useNavigate();
   const [busqueda, setBusqueda] = useState("");
   const input = useRef();
@@ -34,7 +33,7 @@ const Buscador = () => {
 
     clienteAxios
       .get(`buscar/${busqueda}`, {
-        headers: { Authorization: `Bearer ${token}` },
+       withCredentials:true
       })
       .then((res) => {
         busquedaLibros(res.data);

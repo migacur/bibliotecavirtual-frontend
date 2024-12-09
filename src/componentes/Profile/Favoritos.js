@@ -15,7 +15,6 @@ import Spinner from "../Others/Spinner";
 const Favoritos = () => {
   const { favorite, setFavorite } = useContext(FavoriteContext);
   const user = JSON.parse(localStorage.getItem("user"));
-  const token = localStorage.getItem("token");
   const navigate = useNavigate();
   const { guardarAuth } = useContext(ContextoAuth);
   const [reload, setReload] = useState(false);
@@ -23,12 +22,12 @@ const Favoritos = () => {
 
   useEffect(() => {
     const mostrarFavoritos = async () => {
-      if (!user) return null;
+      if (!user) return navigate("/ingresar");
 
       if (favorite)
         await clienteAxios
           .get(`mostrarfavoritos/${user._id}`, {
-            headers: { Authorization: `Bearer ${token}` },
+            withCredentials:true
           })
           .then((res) => {
             setFavorite(res.data);

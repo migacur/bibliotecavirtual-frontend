@@ -861,7 +861,7 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  z-index: 15;
+  z-index: 5;
 }
 
 .input-search{
@@ -869,10 +869,10 @@
   border: none;
   outline: none;
   color: #404040;
-  border-radius: .2rem;
+  overflow: hidden;
   width: 205px;
   font-size: .9rem;
-  border-radius: .5rem;
+  border-radius: .3rem .6rem .6rem .3rem
 }
 
 .btn-search{
@@ -880,12 +880,13 @@
   padding: 0.3rem .8rem;
   cursor: pointer;
   position: relative;
+  right: 0;
   outline: none;
   border: none;
   background: #FFD700;
   color: #053F5E;
   font-family: inherit;
-  border-radius: .2rem;
+  border-radius: .3rem;
   font-size: .9rem;
   font-weight: bold;
   letter-spacing: .7px;
@@ -893,8 +894,8 @@
 }
 
 .btn-search:hover{
-  background: #053F5E;
-  color: #FFD700;
+  background: #FFD700;
+  color: #053F5E;
 }
 
 /* Spinner */

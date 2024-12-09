@@ -14,7 +14,7 @@ const Categorias = () => {
   const user = JSON.parse(localStorage.getItem("user"));
   const { guardarAuth } = useContext(ContextoAuth);
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
+
   const [libros, guardarLibros] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -23,9 +23,8 @@ const Categorias = () => {
   const consultarAPI = async (page) => {
     try {
       const response = await clienteAxios.get(
-        `/libros/${nombre}?page=${page}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
+        `/libros/${nombre}?page=${page}`,{
+          withCredentials:true
         }
       );
       guardarLibros(response.data.findBooks);
@@ -45,7 +44,7 @@ const Categorias = () => {
       return navigate("/ingresar");
     }
     consultarAPI(1);
-  }, [user, navigate]);
+  }, [navigate]);
 
   const handlePageChange = (page) => {
     consultarAPI(page);

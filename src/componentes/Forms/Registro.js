@@ -8,7 +8,6 @@ import Aviso from '../Others/Aviso';
 
 const Registro = () => {
 
-  const token = localStorage.getItem('token')
  const user = JSON.parse(localStorage.getItem("user"));
  const [isRegister,setIsRegister]=useState(false)
   const navigate = useNavigate();
@@ -25,7 +24,7 @@ const Registro = () => {
     setTimeout(()=> {
       return navigate("/")
     },2000)
-  },[user])
+  },[user,navigate])
 
       const leerInput = e => {
  
@@ -38,7 +37,9 @@ const Registro = () => {
     e.preventDefault()  
     setIsRegister(true)
     try {
-      await clienteAxios.post('/crear-cuenta', data)
+      await clienteAxios.post('/crear-cuenta', data,{
+        withCredentials:true
+      })
 
       Swal.fire(
         `Usuario ${data.usuario} creado`,
@@ -55,7 +56,7 @@ const Registro = () => {
         text: error.response.data.msg,
         icon: 'error',
     }) 
-    
+    navigate("/ingresar")
     }
     setIsRegister(false)
   }
@@ -63,7 +64,7 @@ const Registro = () => {
   return (
     
     <div className='form-container'>
-      { user && token ?
+      { user?
           <Aviso msg="Ya tienes una sesión iniciada, redireccionando..."/>
           :       
           <Formulario registarUser={registarUser}

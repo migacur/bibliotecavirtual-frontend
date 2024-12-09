@@ -6,19 +6,18 @@ import { ContextoAuth } from "../../context/auth-context";
 import Aviso from "../Others/Aviso";
 
 const Editar = () => {
-  const accesToken = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("user"));
   const { auth, guardarAuth } = useContext(ContextoAuth);
-
+  const navigate = useNavigate();
   useEffect(() => {
     if (!auth) {
       setTimeout(() => {
         return navigate("/");
       }, 2000);
     }
-  }, [auth]);
+  }, [auth,navigate]);
 
-  const navigate = useNavigate();
+
 
   const [imagen, guardarImagen] = useState("");
   const [category, setCategory] = useState(auth?.categoria);
@@ -38,7 +37,7 @@ const Editar = () => {
         formData,
         {
           "Content-Type": "multipart/form-data",
-          headers: { Authorization: `Bearer ${accesToken}` },
+         withCredentials:true
         }
       );
       if (res.status === 200) {

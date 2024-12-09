@@ -10,12 +10,10 @@ export const Usuarios = ({ children }) => {
     const [usuario, guardarUsuarios] = useState(null)
     const navigate = useNavigate()
 
-    const storeToken = localStorage.getItem('token')
-
     const autenticarUser = useCallback(() => {
-        if(storeToken){
+     
             clienteAxios.get('/verify', {
-                headers: { Authorization: `Bearer ${storeToken}` }
+               withCredentials:true
             })
             .then(res => {
                 guardarUsuarios(res.data)
@@ -34,12 +32,12 @@ export const Usuarios = ({ children }) => {
                     })  
 
             })
-        }
-    },[storeToken, navigate])
+        
+    },[navigate])
 
     const logoutUser = () => {
 
-        localStorage.clear()
+        localStorage.removeItem("user")
         guardarUsuarios(null)
         navigate("/ingresar")
     }

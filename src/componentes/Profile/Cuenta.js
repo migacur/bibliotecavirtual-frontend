@@ -8,7 +8,6 @@ import Spinner from "../Others/Spinner";
 
 const Cuenta = () => {
   const navigate = useNavigate();
-  const token = localStorage.getItem("token");
   const user = JSON.parse(localStorage.getItem("user"));
   const [avatar, guardarAvatar] = useState(null);
   const [isLoad, setIsLoad] = useState(false);
@@ -23,7 +22,7 @@ const Cuenta = () => {
 
     clienteAxios
       .get("/cuenta", {
-        headers: { Authorization: `Bearer ${token}` },
+        withCredentials:true
       })
       .then((res) => {
         setAcoount(res.data.user);
@@ -36,8 +35,9 @@ const Cuenta = () => {
           text: e.response.data.msg,
           icon: "error",
         });
+        return navigate("/404")
       });
-  }, []);
+  }, [user,navigate]);
  
   const subirAvatar = (e) => {
     guardarAvatar(e.target.files[0]);
@@ -85,7 +85,7 @@ const Cuenta = () => {
 
   return (
     <>
-      {user && token ? (
+      {user ? (
         <div className="book-container">
           <div className="myaccount">
             <div className="myUser">

@@ -6,7 +6,6 @@ import { ContextoUsuario } from '../../context/user-context'
 
 const Login = () => {
   
-  const token = localStorage.getItem('token')
   const user = JSON.parse(localStorage.getItem("user"));
   const { logoutUser } = useContext(ContextoUsuario)
 
@@ -35,7 +34,7 @@ const Login = () => {
 
     <div className='bar-login'>
 
-        { token && user?
+        { user?
           <>
         <Link  to='/micuenta' className='enlace-be enlace-be-account'>
     
