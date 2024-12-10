@@ -1,7 +1,7 @@
 import React from 'react'
 import Back from './Back'
 
-const Formulario = ({registarUser, leerInput,isRegister }) => {
+const Formulario = ({registarUser, leerInput,isRegister,errors }) => {
 
 
   return (
@@ -43,6 +43,11 @@ const Formulario = ({registarUser, leerInput,isRegister }) => {
    </div>
 
     }
+      {errors.map((error, index) => (
+          <li key={index} className="form_error">
+            {error.msg}
+          </li>
+        ))}
     <input 
     type="submit" 
     value="Registrarme" 

@@ -10,6 +10,7 @@ const Registro = () => {
 
  const user = JSON.parse(localStorage.getItem("user"));
  const [isRegister,setIsRegister]=useState(false)
+ const [errors, setErrors] = useState([]);
   const navigate = useNavigate();
   
   const [data, guardarData] = useState({
@@ -48,19 +49,21 @@ const Registro = () => {
       )  
       navigate("/ingresar")
 
-    } catch (error) {
-      console.log(error)
-   
-      Swal.fire({
-        title: '¡Error!',
-        text: error.response.data.msg,
-        icon: 'error',
-    }) 
-    navigate("/ingresar")
-    }
+    } catch (e) {
+      if (e.response.data.errors) {
+        setErrors(e.response.data.errors);
+      }if(e.response.data.msg){
+        Swal.fire({
+          title: "",
+          text: e.response.data.msg,
+          icon: "error",
+        });
+      }
+      
+  }
     setIsRegister(false)
   }
-
+console.log(errors)
   return (
     
     <div className='form-container'>
@@ -70,6 +73,7 @@ const Registro = () => {
           <Formulario registarUser={registarUser}
                       leerInput={leerInput} 
                       isRegister={isRegister}
+                      errors={errors}
           />
       }
 
