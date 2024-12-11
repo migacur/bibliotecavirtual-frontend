@@ -55,7 +55,7 @@ const Cuenta = () => {
     formData.append("file", avatar);
 
     clienteAxios
-      .post(`/change-avatar/${user._id}`, formData)
+      .post(`/change-avatar/${user._id}`, formData,{withCredentials:true})
       .then((res) => {
         user.avatar = res.data;
         localStorage.setItem("user", JSON.stringify(user));
