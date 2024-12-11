@@ -25,7 +25,7 @@ export const Usuarios = ({ children }) => {
               }
             })
         
-    },[])
+    },[location.pathname])
 
     const logoutUser = () => {
 
