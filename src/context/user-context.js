@@ -1,13 +1,13 @@
 import { createContext, useCallback, useEffect, useState } from "react";
 import clienteAxios from "../config/axios";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 export const ContextoUsuario = createContext()
 
 export const Usuarios = ({ children }) => {
 
     const [usuario, guardarUsuarios] = useState(null)
-    const navigate = useNavigate()
+
     const location = useLocation();
 
     const autenticarUser = useCallback(() => {
@@ -31,7 +31,7 @@ export const Usuarios = ({ children }) => {
 
         localStorage.removeItem("user")
         guardarUsuarios(null)
-        navigate("/ingresar")
+        window.location.href = "/"
     }
 
     useEffect(() => {
