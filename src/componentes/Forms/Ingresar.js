@@ -7,7 +7,7 @@ import LoginForm from "./LoginForm";
 import Aviso from "../Others/Aviso";
 
 const Ingresar = () => {
-  const { autenticarUser } = useContext(ContextoUsuario);
+  const { guardarUsuarios } = useContext(ContextoUsuario);
   const user = JSON.parse(localStorage.getItem("user"));
   const [isLogin, setIsLogin] = useState(false);
   const navigate = useNavigate();
@@ -33,36 +33,38 @@ const Ingresar = () => {
       <Aviso msg="Ya tienes una sesión iniciada, redireccionando a la home..." />
     );
 
-  const loginUser = async (e) => {
-    e.preventDefault();
-    setIsLogin(true);
-    try {
-      const res = await clienteAxios.post("/loginaccount", login, {
-        withCredentials:true
-      });
-      if (res.status === 200) {
-        Swal.fire(
-          `¡Hola ${login.usuario}!`,
-          "¡Has ingresado correctamente!",
-          "success"
-        );
-     
-        localStorage.setItem("user", JSON.stringify(res.data.userInfo));
-
-        autenticarUser();
-
-        navigate("/");
+    const loginUser = async (e) => {
+      e.preventDefault();
+      setIsLogin(true);
+      try {
+        const res = await clienteAxios.post("/loginaccount", login, {
+          withCredentials: true
+        });
+        if (res.status === 200) {
+          Swal.fire(
+            `¡Hola ${login.usuario}!`,
+            "¡Has ingresado correctamente!",
+            "success"
+          );
+          console.log(res.data);
+          localStorage.setItem("user", JSON.stringify(res.data.userInfo));
+  
+          // Actualizar el estado del usuario en el contexto después de guardar en localStorage
+          guardarUsuarios(res.data.userInfo);
+  
+          navigate("/");
+        }
+      } catch (error) {
+        console.log(error.response.data);
+        Swal.fire({
+          title: "¡Error al ingresar!",
+          text: error.response.data.msg,
+          icon: "error",
+        });
       }
-    } catch (error) {
-      console.log(error.response.data);
-      Swal.fire({
-        title: "¡Error al ingresar!",
-        text: error.response.data.msg,
-        icon: "error",
-      });
-    }
-    setIsLogin(false);
+      setIsLogin(false);
   };
+  
 
   return (
     <LoginForm loginUser={loginUser} leerInput={leerInput} isLogin={isLogin} />
