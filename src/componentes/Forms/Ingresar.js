@@ -46,7 +46,6 @@ const Ingresar = () => {
                   "¡Has ingresado correctamente!",
                   "success"
               );
-              console.log(res.data);
               localStorage.setItem("user", JSON.stringify(res.data.userInfo));
   
               // Actualizar el estado del usuario en el contexto después de guardar en localStorage
