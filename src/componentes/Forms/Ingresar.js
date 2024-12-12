@@ -7,7 +7,7 @@ import LoginForm from "./LoginForm";
 import Aviso from "../Others/Aviso";
 
 const Ingresar = () => {
-  const { guardarUsuarios } = useContext(ContextoUsuario);
+  const { guardarUsuarios,autenticarUser } = useContext(ContextoUsuario);
   const user = JSON.parse(localStorage.getItem("user"));
   const [isLogin, setIsLogin] = useState(false);
   const navigate = useNavigate();
@@ -37,30 +37,33 @@ const Ingresar = () => {
       e.preventDefault();
       setIsLogin(true);
       try {
-        const res = await clienteAxios.post("/loginaccount", login, {
-          withCredentials: true
-        });
-        if (res.status === 200) {
-          Swal.fire(
-            `¡Hola ${login.usuario}!`,
-            "¡Has ingresado correctamente!",
-            "success"
-          );
-          console.log(res.data);
-          localStorage.setItem("user", JSON.stringify(res.data.userInfo));
+          const res = await clienteAxios.post("/loginaccount", login, {
+              withCredentials: true
+          });
+          if (res.status === 200) {
+              Swal.fire(
+                  `¡Hola ${login.usuario}!`,
+                  "¡Has ingresado correctamente!",
+                  "success"
+              );
+              console.log(res.data);
+              localStorage.setItem("user", JSON.stringify(res.data.userInfo));
   
-          // Actualizar el estado del usuario en el contexto después de guardar en localStorage
-          guardarUsuarios(res.data.userInfo);
+              // Actualizar el estado del usuario en el contexto después de guardar en localStorage
+              guardarUsuarios(res.data.userInfo);
   
-          navigate("/");
-        }
+              // Llamar a autenticarUser para sincronizar el estado de autenticación
+              autenticarUser();
+  
+              navigate("/micuenta");
+          }
       } catch (error) {
-        console.log(error.response.data);
-        Swal.fire({
-          title: "¡Error al ingresar!",
-          text: error.response.data.msg,
-          icon: "error",
-        });
+          console.log(error.response.data);
+          Swal.fire({
+              title: "¡Error al ingresar!",
+              text: error.response.data.msg,
+              icon: "error",
+          });
       }
       setIsLogin(false);
   };
