@@ -1,27 +1,21 @@
 @font-face {
-  font-family: 'Bebas Neue';
-  src: url('BebasNeue-Regular.woff2') format('woff2'),
-      url('BebasNeue-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: 'Akshar';
-  src: url('Akshar-Light.woff2') format('woff2'),
-      url('Akshar-Light.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
+  src: url('../fonts/Akshar-VariableFont_wght.woff2') format('woff2'),
+       url('../fonts/Akshar-VariableFont_wght.woff') format('woff');
   font-display: swap;
 }
 
 @font-face {
-  font-family: 'Lato';
-  src: url('Lato-Regular.woff2') format('woff2'),
-      url('Lato-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
+  font-family: 'Oxygen';
+  src: url('../fonts/Oxygen-Regular.woff2') format('woff2'),
+       url('../fonts/Oxygen-Regular.woff') format('woff');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Bebas';
+  src: url('../fonts/BebasNeue-Regular.woff2') format('woff2'),
+       url('../fonts/BebasNeue-Regular.woff') format('woff');
   font-display: swap;
 }
 
