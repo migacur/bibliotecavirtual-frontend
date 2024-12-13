@@ -33,21 +33,21 @@ const Slider = () => {
       <div className="slider-box">
         {inicio === 1 ? (
           <img
-            src="https://res.cloudinary.com/dmi8mfcre/image/upload/v1680930455/mdfoekgk3yv9ominiffv.jpg"
+            src="https://res.cloudinary.com/dmi8mfcre/image/upload/v1734108641/mdfoekgk3yv9ominiffv_qcbmj8.jpg"
             className="img-slider"
             alt="foto ETI"
           />
         ) : null}
         {inicio === 2 ? (
           <img
-            src="https://res.cloudinary.com/dmi8mfcre/image/upload/v1680930539/ovysjyddmh2rfvtkijlv.jpg"
+            src="https://res.cloudinary.com/dmi8mfcre/image/upload/v1734108641/ovysjyddmh2rfvtkijlv_xqwar4.jpg"
             className="img-slider"
             alt="foto ETI"
           />
         ) : null}
         {inicio === 3 ? (
           <img
-            src="https://res.cloudinary.com/dmi8mfcre/image/upload/v1680930584/cf5l6xodl9vqupl2nxzp.jpg"
+            src="https://res.cloudinary.com/dmi8mfcre/image/upload/v1734108641/cf5l6xodl9vqupl2nxzp_ktwavv.jpg"
             className="img-slider"
             alt="foto ETI"
           />

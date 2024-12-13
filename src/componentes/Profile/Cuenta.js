@@ -32,7 +32,7 @@ const Cuenta = () => {
         console.log(e);
         Swal.fire({
           title: "¡No se puede acceder al perfil!",
-          text: e.response.data.msg,
+          text: e.response?.data?.msg || "Error desconocido al mostrar el perfil",
           icon: "error",
         });
         return navigate("/404")
