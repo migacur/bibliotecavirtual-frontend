@@ -31,11 +31,13 @@ const Categorias = () => {
       setCurrentPage(response.data.currentPage);
       setTotalPages(response.data.totalPages);
     } catch (e) {
-      Swal.fire({
-        title: "¡Error!",
-        text: e.response.data.msg,
-        icon: "error",
-      });
+      if(e.response.data.msg){
+        Swal.fire({
+          title: "¡Error!",
+          text: e.response.data.msg,
+          icon: "error",
+        });
+      }
     }
   };
 
