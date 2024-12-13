@@ -67,7 +67,7 @@ const Buscador = () => {
         ref={input}
         placeholder="Buscar libro..."
       />
-      <button className="search-icon" type="submit">
+      <button className="search-icon" type="submit" aria-label="Buscar">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="22"

@@ -23,7 +23,7 @@ const Footer = () => {
 
       <div className="footer-aviso">
         <div className="warning">
-          <h4>Importante</h4>
+          <p>Importante</p>
           <p>
             Los libros utilizados son una recopilación de diversos sitios web.
           </p>
