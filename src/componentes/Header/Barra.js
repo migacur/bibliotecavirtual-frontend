@@ -11,6 +11,7 @@ const Barra = ({changeMenu, menuAnimated}) => {
     onClick={changeMenu}
     ref={menuAnimated}
     type='button'
+    aria-label="Menu"
     className='hamburger'>
       <span className='line'></span>
       <span className='line'></span>
