@@ -7,7 +7,7 @@ const Home = () => {
       <section>
         <figure>
           <img
-            src="https://res.cloudinary.com/dmi8mfcre/image/upload/v1682383994/ygfdospekk9lyoqgkygp.png"
+            src="https://res.cloudinary.com/dmi8mfcre/image/upload/v1734125902/logo_qyvg6p.png"
             className="logo-img"
             alt="logo ETI"
           />
