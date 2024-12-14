@@ -1,10 +1,8 @@
 import "./App.css";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
-import { Datos } from "./context/context-book";
 import { Auth } from "./context/auth-context";
 import { Usuarios } from "./context/user-context";
-import { FavoriteBooks } from "./context/favorite-context";
 import Login from "./componentes/Forms/Login";
 import Home from "./componentes/HomeScreen/Home";
 import Categorias from "./componentes/Books/Categoria";
@@ -26,9 +24,7 @@ function App() {
     <div className="container">
       <Header title="Biblioteca Virtual" />
       <Usuarios>
-        <FavoriteBooks>
           <Auth>
-            <Datos>
               <main className="contenido">
                 <Navbar />
                 <Routes>
@@ -49,9 +45,7 @@ function App() {
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
-            </Datos>
           </Auth>
-        </FavoriteBooks>
       </Usuarios>
       <Footer />
     </div>

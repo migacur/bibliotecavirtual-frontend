@@ -1,6 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
 import clienteAxios from "../../config/axios";
-import { FavoriteContext } from "../../context/favorite-context";
 import deleteFavorite from "../../helper/deleteFavorite";
 import Aviso from "../Others/Aviso";
 import borrarLibro from "../../helper/borrarLibro";
@@ -13,7 +12,7 @@ import Spinner from "../Others/Spinner";
 
 
 const Favoritos = () => {
-  const { favorite, setFavorite } = useContext(FavoriteContext);
+  const [favorite, setFavorite] = useState([]);
   const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
   const { guardarAuth } = useContext(ContextoAuth);
@@ -44,7 +43,7 @@ const Favoritos = () => {
     };
 
     mostrarFavoritos();
-  }, [reload]);
+  }, [reload,navigate,user]);
 
   if (!user)
     return <Aviso msg="Error 401- No autorizado para acceder a esta ruta" />;
