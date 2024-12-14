@@ -13,7 +13,6 @@ import Favoritos from "./componentes/Profile/Favoritos";
 import Agregar from "./componentes/Forms/Agregar";
 import Editar from "./componentes/Forms/Editar";
 import LibrosBuscados from "./componentes/Books/LibrosBuscados";
-import ConfirmarPass from "./componentes/Forms/confirmarPass";
 import NotFound from "./componentes/Others/NotFound";
 import Header from "./componentes/Header/Header";
 import Navbar from "./componentes/Navigation/Navbar";
@@ -38,10 +37,6 @@ function App() {
                   <Route path="/administrador" element={<Agregar />} />
                   <Route path="/editar-libro" element={<Editar />} />
                   <Route path="/busqueda" element={<LibrosBuscados />} />
-                  <Route
-                    path="/confirmar-password"
-                    element={<ConfirmarPass />}
-                  />
                   <Route path="*" element={<NotFound />} />
                 </Routes>
               </main>
