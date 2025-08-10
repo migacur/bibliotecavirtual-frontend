@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import clienteAxios from "../../config/axios";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
@@ -15,9 +15,7 @@ const Editar = () => {
         return navigate("/");
       }, 2000);
     }
-  }, [auth,navigate]);
-
-
+  }, [auth, navigate]);
 
   const [imagen, guardarImagen] = useState("");
   const [category, setCategory] = useState(auth?.categoria);
@@ -37,7 +35,7 @@ const Editar = () => {
         formData,
         {
           "Content-Type": "multipart/form-data",
-         withCredentials:true
+          withCredentials: true,
         }
       );
       if (res.status === 200) {

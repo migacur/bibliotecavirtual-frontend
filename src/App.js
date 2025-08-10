@@ -1,5 +1,4 @@
 import "./App.css";
-import React from "react";
 import { Route, Routes } from "react-router-dom";
 import { Auth } from "./context/auth-context";
 import { Usuarios } from "./context/user-context";
@@ -23,24 +22,24 @@ function App() {
     <div className="container">
       <Header title="Biblioteca Virtual" />
       <Usuarios>
-          <Auth>
-              <main className="contenido">
-                <Navbar />
-                <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/login" element={<Login />} />
-                  <Route path="/categoria/:nombre" element={<Categorias />} />
-                  <Route path="/registro" element={<Registro />} />
-                  <Route path="/ingresar" element={<Ingresar />} />
-                  <Route path="/micuenta" element={<Cuenta />} />
-                  <Route path="/favoritos" element={<Favoritos />} />
-                  <Route path="/administrador" element={<Agregar />} />
-                  <Route path="/editar-libro" element={<Editar />} />
-                  <Route path="/busqueda" element={<LibrosBuscados />} />
-                  <Route path="*" element={<NotFound />} />
-                </Routes>
-              </main>
-          </Auth>
+        <Auth>
+          <main className="contenido">
+            <Navbar />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/categoria/:nombre" element={<Categorias />} />
+              <Route path="/registro" element={<Registro />} />
+              <Route path="/ingresar" element={<Ingresar />} />
+              <Route path="/micuenta" element={<Cuenta />} />
+              <Route path="/favoritos" element={<Favoritos />} />
+              <Route path="/administrador" element={<Agregar />} />
+              <Route path="/editar-libro" element={<Editar />} />
+              <Route path="/busqueda" element={<LibrosBuscados />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </main>
+        </Auth>
       </Usuarios>
       <Footer />
     </div>

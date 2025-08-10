@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import clienteAxios from "../../config/axios";
 import { useNavigate } from "react-router-dom";
@@ -48,10 +48,8 @@ const Ingresar = () => {
         );
         localStorage.setItem("user", JSON.stringify(res.data.userInfo));
 
-        // Actualizar el estado del usuario en el contexto después de guardar en localStorage
         guardarUsuarios(res.data.userInfo);
 
-        // Llamar a autenticarUser para sincronizar el estado de autenticación
         autenticarUser();
 
         navigate("/");

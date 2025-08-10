@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { NavLink } from "react-router-dom";
 import Barra from "../Header/Barra";
 

@@ -1,10 +1,9 @@
-import React, { useContext, useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import clienteAxios from "../../config/axios";
 import { ContextoBusqueda } from "../../context/search-context";
 import Spinner from "../Others/Spinner";
-
 
 const Buscador = () => {
   const { busquedaLibros } = useContext(ContextoBusqueda);
@@ -33,7 +32,7 @@ const Buscador = () => {
 
     clienteAxios
       .get(`buscar/${busqueda}`, {
-       withCredentials:true
+        withCredentials: true,
       })
       .then((res) => {
         busquedaLibros(res.data);

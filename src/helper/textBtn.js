@@ -1,16 +1,15 @@
 const textoBtn = (libros, id, usuario) => {
-    let str;
+  let str;
 
-        libros.map(_ => {
-          if(usuario.favoritos.includes(id)){
-             return str = 'Agregado a favoritos'
-          }else{
-            return str = 'Agregar a favoritos'
-          }
-            
-     })
-     
-        return str;
-  }
+  libros.map((_) => {
+    if (usuario.favoritos.includes(id)) {
+      return (str = "Agregado a favoritos");
+    } else {
+      return (str = "Agregar a favoritos");
+    }
+  });
 
-  export default textoBtn;
+  return str;
+};
+
+export default textoBtn;

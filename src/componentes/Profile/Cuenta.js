@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import clienteAxios from "../../config/axios";
 import Avatar from "./Avatar";
 import Aviso from "../Others/Aviso";
@@ -22,7 +22,7 @@ const Cuenta = () => {
 
     clienteAxios
       .get("/cuenta", {
-        withCredentials:true
+        withCredentials: true,
       })
       .then((res) => {
         setAcoount(res.data.user);
@@ -35,10 +35,10 @@ const Cuenta = () => {
           text: e.response?.data?.msg || "Error desconocido",
           icon: "error",
         });
-        return navigate("/ingresar")
+        return navigate("/ingresar");
       });
-  }, [user,navigate]);
- 
+  }, [user, navigate]);
+
   const subirAvatar = (e) => {
     guardarAvatar(e.target.files[0]);
   };

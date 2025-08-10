@@ -7,7 +7,6 @@ export const ContextoUsuario = createContext();
 
 export const Usuarios = ({ children }) => {
   const [usuario, guardarUsuarios] = useState(() => {
-    // Obtener el usuario de localStorage al cargar el componente
     const savedUser = localStorage.getItem("user");
     return savedUser ? JSON.parse(savedUser) : null;
   });
@@ -32,7 +31,7 @@ export const Usuarios = ({ children }) => {
             icon: "error",
           });
         }
-          logoutUser();
+        logoutUser();
       });
   }, [location.pathname]);
 
@@ -43,7 +42,6 @@ export const Usuarios = ({ children }) => {
   };
 
   useEffect(() => {
-    // Solo llamar a autenticarUser si hay un usuario en localStorage
     if (usuario) {
       autenticarUser();
     }

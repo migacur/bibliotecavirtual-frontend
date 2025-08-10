@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import clienteAxios from "../../config/axios";
 import deleteFavorite from "../../helper/deleteFavorite";
 import Aviso from "../Others/Aviso";
@@ -7,9 +7,8 @@ import editarLibro from "../../helper/editarLibro";
 import { ContextoAuth } from "../../context/auth-context";
 import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
-import Book from './../Books/Book';
+import Book from "./../Books/Book";
 import Spinner from "../Others/Spinner";
-
 
 const Favoritos = () => {
   const [favorite, setFavorite] = useState([]);
@@ -26,7 +25,7 @@ const Favoritos = () => {
       if (favorite)
         await clienteAxios
           .get(`mostrarfavoritos/${user._id}`, {
-            withCredentials:true
+            withCredentials: true,
           })
           .then((res) => {
             setFavorite(res.data);
@@ -43,7 +42,7 @@ const Favoritos = () => {
     };
 
     mostrarFavoritos();
-  }, [reload,navigate,user]);
+  }, [reload, navigate, user]);
 
   if (!user)
     return <Aviso msg="Error 401- No autorizado para acceder a esta ruta" />;
